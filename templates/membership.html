@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}Membership Plans - FitZone Gym{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Membership <span>Plans</span></h1>
+        <p>Choose the perfect plan for your fitness journey</p>
+    </div>
+</section>
+
+<section class="pricing">
+    <div class="container">
+        <h2 class="section-title">Our <span>Plans</span></h2>
+        <p class="section-subtitle">Flexible membership options to suit your needs and budget</p>
+        
+        <div class="pricing-grid">
+            {% for plan in plans %}
+            <div class="pricing-card {% if plan.name == 'Pro' %}featured{% endif %}">
+                {% if plan.name == 'Pro' %}
+                <span class="badge">MOST POPULAR</span>
+                {% endif %}
+                
+                <div class="plan-header">
+                    <h3>{{ plan.name }}</h3>
+                    <p class="price">{{ plan.price }}</p>
+                </div>
+                
+                <ul class="features-list">
+                    {% for feature in plan.features %}
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        {{ feature }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <button class="plan-btn">Choose Plan</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">Our <span>Services</span></h2>
+        <p class="section-subtitle">Everything you need for a complete fitness experience</p>
+        
+        <div class="services-grid">
+            {% for service in services %}
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <h3>{{ service }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="membership-benefits">
+    <div class="container">
+        <h2 class="section-title">Membership <span>Benefits</span></h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-clock"></i>
+                <h3>Flexible Hours</h3>
+                <p>Access the gym 6 AM - 11 PM daily</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-wifi"></i>
+                <h3>Free WiFi</h3>
+                <p>Stay connected while you workout</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-parking"></i>
+                <h3>Free Parking</h3>
+                <p>Convenient parking for all members</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-shower"></i>
+                <h3>Clean Facilities</h3>
+                <p>Modern showers and changing rooms</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Transform Your Life?</h2>
+        <p>Join FitZone today and start your fitness journey with us!</p>
+        <button class="btn-primary">Join Now</button>
+    </div>
+</section>
+{% endblock %}

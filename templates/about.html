@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - FitZone Gym{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>About <span>FitZone</span></h1>
+        <p>Your trusted partner in fitness and wellness</p>
+    </div>
+</section>
+
+<section class="mission">
+    <div class="container">
+        <div class="mission-content">
+            <div class="mission-text">
+                <h2>Our <span>Mission</span></h2>
+                <p class="mission-statement">{{ mission }}</p>
+                <p>At FitZone, we believe that fitness is not just about physical transformation—it's about building confidence, discipline, and a healthier lifestyle. Our state-of-the-art facilities and expert team are dedicated to helping you achieve your goals.</p>
+            </div>
+            <div class="mission-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team">
+    <div class="container">
+        <h2 class="section-title">Meet Our <span>Team</span></h2>
+        <p class="section-subtitle">Expert professionals dedicated to your fitness journey</p>
+        
+        <div class="team-grid">
+            {% for member in team %}
+            <div class="team-card">
+                <div class="team-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="team-info">
+                    <h3>{{ member.name }}</h3>
+                    <p class="role">{{ member.role }}</p>
+                    <p>Certified professional with years of experience in helping clients achieve their fitness goals.</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="values">
+    <div class="container">
+        <h2 class="section-title">Our <span>Values</span></h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-heart"></i>
+                <h3>Passion</h3>
+                <p>We're passionate about fitness and helping you succeed</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-users"></i>
+                <h3>Community</h3>
+                <p>Building a supportive and motivating environment</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Excellence</h3>
+                <p>Committed to providing the best service and facilities</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Safety</h3>
+                <p>Your health and safety are our top priorities</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

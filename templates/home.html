@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - FitZone Gym{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Welcome to <span>FitZone</span> Gym</h1>
+            <p>Transform your body, transform your life. Join the best fitness community today!</p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('membership') }}" class="btn-primary">View Plans</a>
+                <a href="{{ url_for('about') }}" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="highlights">
+    <div class="container">
+        <h2 class="section-title">Why Choose <span>FitZone?</span></h2>
+        <p class="section-subtitle">Experience fitness like never before with our world-class facilities</p>
+        
+        <div class="highlight-grid">
+            {% for highlight in highlights %}
+            <div class="highlight-card">
+                <div class="icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3>{{ highlight }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Active Members</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Expert Trainers</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Classes Weekly</p>
+            </div>
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Years Experience</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Start Your Fitness Journey?</h2>
+        <p>Join FitZone today and get access to premium facilities and expert guidance</p>
+        <a href="{{ url_for('membership') }}" class="btn-primary">Get Started Now</a>
+    </div>
+</section>
+{% endblock %}
